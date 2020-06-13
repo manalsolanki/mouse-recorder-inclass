@@ -1,0 +1,31 @@
+h1{
+	text-align: center;
+	color: blue;
+}	
+.buttons{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+.play-button{
+	color:black;
+	padding: 1em;
+	margin: 1em;
+	background-color:aqua;
+	border: 1px solid black;
+	border-radius: 1em;
+}
+#cursor {
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	background-color: black;
+
+	--x: 0;
+	--y: 0;
+	position: fixed;
+	top: calc(var(--y) * 1px);
+	left: calc(var(--x) * 1px);
+
+	transition: all 10ms; 
+}
