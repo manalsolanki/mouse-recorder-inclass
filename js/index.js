@@ -22,6 +22,7 @@ const $replayRecording = document.getElementById('replayRecording')
 
 window.addEventListener('mousemove', (event) => {
 	if (isRecording) {
+		console.log(isRecording)
 		
 		console.log(event.clientX, event.clientY,event.timeStamp)
 		// Record the data to the Arrayx
@@ -42,11 +43,13 @@ window.addEventListener('mousemove', (event) => {
 // Start/stop the recording
 
 $startAndStop.addEventListener('click', (event) => {
+	console.log("IS recording ", isRecording)
 	isRecording = !isRecording;
- 
+	console.log("IS recording ", isRecording)
 	// Clearing the Array. 
 	if (isRecording)
 	{
+		
 		$startAndStop.style.backgroundColor = "red";
 		mouseMoves = [];
 	}
@@ -86,11 +89,14 @@ let replay = (i)=>{
 		}	
 		else
 		{
+			$cursor.style.setProperty('--x',0)
+			$cursor.style.setProperty('--y',0)
 			$replayRecording.innerHTML=" Replay the Recording ";
 		}
 }
 $replayRecording.addEventListener('click', (event) => {
 	replay(0);
+	
 	// Set the x and y for each mouse move recorded (123, 456 are examples)
 	// $cursor.style.setProperty('--x', 123)
 	// $cursor.style.setProperty('--y', 456)
